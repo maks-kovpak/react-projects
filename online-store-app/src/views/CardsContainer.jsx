@@ -17,9 +17,12 @@ function CardsContainer() {
   }, [products, categoryID]);
 
   useEffect(() => {
-    axios
-      .get(`https://api.escuelajs.co/api/v1/categories/${categoryID}`)
-      .then((response) => setCategoryName(response.data.name));
+    if (categoryID) {
+      axios.get(`${process.env.PUBLIC_URL}/assets/categories.json`).then((response) => {
+        const category = response.data.find((item) => item.id === parseInt(categoryID));
+        setCategoryName(category.name);
+      });
+    }
   }, [categoryID]);
 
   return loading ? (
@@ -29,13 +32,18 @@ function CardsContainer() {
   ) : (
     <>
       <h1 className='text-4xl font-bold mb-6 text-center'>{categoryName}</h1>
-      <div className='cards-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-        {categoryProducts.length ? (
-          categoryProducts.map((item) => <ProductCard product={item} key={item.id} />)
-        ) : (
-          <h1>Nothing was found...</h1>
-        )}
-      </div>
+
+      {categoryProducts.length ? (
+        <div className='cards-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+          {categoryProducts.map((item) => (
+            <ProductCard product={item} key={item.id} />
+          ))}
+        </div>
+      ) : (
+        <div className='h-[60vh] w-full flex justify-center items-center'>
+          <h1 className='text-5xl font-medium text-center'>Nothing was found...</h1>
+        </div>
+      )}
     </>
   );
 }

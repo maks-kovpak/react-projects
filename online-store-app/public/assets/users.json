@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "email": "john@mail.com",
+        "password": "changeme",
+        "name": "Jhon",
+        "role": "customer",
+        "avatar": "https://i.imgur.com/LDOO4Qs.jpg",
+        "creationAt": "2023-11-13T18:56:43.000Z",
+        "updatedAt": "2023-11-13T18:56:43.000Z"
+    },
+    {
+        "id": 2,
+        "email": "maria@mail.com",
+        "password": "maria123",
+        "name": "Maria",
+        "role": "customer",
+        "avatar": "https://i.imgur.com/DTfowdu.jpg",
+        "creationAt": "2023-11-13T18:56:43.000Z",
+        "updatedAt": "2023-11-13T18:56:43.000Z"
+    },
+    {
+        "id": 3,
+        "email": "admin@example.com",
+        "password": "12345",
+        "name": "Admin",
+        "role": "admin",
+        "avatar": "https://i.imgur.com/yhW6Yw1.jpg",
+        "creationAt": "2023-11-13T18:56:43.000Z",
+        "updatedAt": "2023-11-13T18:56:43.000Z"
+    },
+    {
+        "id": 4,
+        "email": "asfa@gmail.com",
+        "password": "1234",
+        "name": "nel",
+        "role": "admin",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com.mx%2Fgracemurmaidertkd%2Ffotos-random-para-poner-en-tu-perfil%2F&psig=AOvVaw1JE6A4s_4O_FsBWKq8Nmlr&ust=1699988756953000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOD8vfXVwYIDFQAAAAAdAAAAABAE",
+        "creationAt": "2023-11-13T19:08:21.000Z",
+        "updatedAt": "2023-11-13T19:08:21.000Z"
+    }
+]

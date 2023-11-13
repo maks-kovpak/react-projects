@@ -15,7 +15,7 @@ function LoginForm() {
     e.preventDefault();
     const fields = e.target.elements;
 
-    axios.get('https://api.escuelajs.co/api/v1/users').then((response) => {
+    axios.get(`${process.env.PUBLIC_URL}/assets/users.json`).then((response) => {
       const current = response.data.filter((item) => {
         return item.email === fields.email.value && item.password === fields.password.value;
       })[0];
@@ -42,7 +42,7 @@ function LoginForm() {
           <div className='mb-2 block'>
             <Label htmlFor='email' value='Your email' />
           </div>
-          <TextInput id='email' type='email' placeholder='your.name@example.com' required />
+          <TextInput id='email' type='email' placeholder='admin@example.com' required />
         </div>
         <div>
           <div className='mb-2 block'>

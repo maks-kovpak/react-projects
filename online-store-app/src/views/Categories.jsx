@@ -7,8 +7,8 @@ function Categories() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.escuelajs.co/api/v1/categories').then((response) => {
-      setCategories(response.data.slice(0, 5));
+    axios.get(`${process.env.PUBLIC_URL}/assets/categories.json`).then((response) => {
+      setCategories(response.data);
       setLoading(false);
     });
   }, []);

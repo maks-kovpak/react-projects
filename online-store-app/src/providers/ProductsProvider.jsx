@@ -8,7 +8,7 @@ function ProductsProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://api.escuelajs.co/api/v1/products').then((response) => {
+    axios.get(`${process.env.PUBLIC_URL}/assets/products.json`).then((response) => {
       setProducts(response.data.slice(0, 28));
       setLoading(false);
     });
